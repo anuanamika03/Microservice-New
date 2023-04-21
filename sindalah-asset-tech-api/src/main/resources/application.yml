@@ -1,0 +1,114 @@
+alert:
+    msg:
+        aqi: The air quality at the golf course is beyond a pleasant golfing experience
+            for guests. Please monitor closely.
+        humd: The humidity at the golf course is beyond a pleasant golfing experience
+            for guests. Please monitor closely.
+        pressure: The pressure at the golf course is beyond a pleasant golfing experience
+            for guests. Please monitor closely.
+        rainchance: Their is a chance of rain at the golf course, and it is beyond
+            a pleasant golfing experience for guests. Please monitor closely.
+        temp: The temperature at the golf course is beyond a pleasant golfing experience
+            for guests. Please monitor closely.
+        uvindex: The UV index at the golf course is beyond a pleasant golfing experience
+            for guests. Please monitor closely.
+        weatherparamaqi: aqi
+        weatherparamhumid: humidity
+        weatherparamtemp: temperature
+        windspeed: The wind speed at the golf course is beyond a pleasant golfing
+            experience for guests. Please monitor closely.
+apps:
+    golfopr:
+        name: Golf Operator
+    neom:
+        name: Discover Neom App
+    staff:
+        name: Staff App
+chart:
+    value:
+        humid: 35, 35, 40, 55, 75, 95, 65, 55, 30, 35, 35, 35
+        pressure: 1021, 1020, 1050, 1050, 1075, 1095, 1065, 1055, 1030, 1035, 1025,
+            1035
+        rainChance: 0, 5, 5, 10, 30, 45, 30, 20, 5, 5, 0, 0
+        temp: 18, 18, 26, 28, 27, 30, 27, 26, 23, 19, 18, 15
+        uvIndex: 1, 1.5, 1.5, 2, 2, 2, 3, 3.5, 2.5, 2, 2, 1.5
+        windSpeed: 35, 35, 40, 55, 75, 48, 45, 45, 55, 45, 40, 35
+        xAxis: 10 AM, 11 AM, 12 PM, 1 PM, 2 PM, 3 PM, 4 PM, 5 PM, 6 PM, 7 PM, 8 PM,
+            9 PM
+client:
+    key: client1
+cron:
+    archive:
+        time: 0 47 17 * * ?
+    featchweth:
+        time: 0 03 17 * * ?
+    fetchiot:
+        time: 0 10 0 * * ?
+data:
+    archive:
+        days: -30
+fixeddealy:
+    fetchiot:
+        time: 60000
+    fetchiot2:
+        time: 300000
+    fetchweat:
+        time: 3600000
+iotsense:
+    msg:
+        aqilabel<100: Good
+        aqilabel<200: Poor
+        aqilabel>200: Very Poor
+    values:
+        aqi: 60
+        rainchancedef: 5
+        uvindexdef: 2.55
+jwt:
+    expirationDateInMs: 5000000
+    secret: abc123
+    username: '''abc123@gmail.com'''
+    userpassword: '''client1'''
+logging:
+    file: /my-logs/app.log
+    file.name: app.log
+neom:
+    api:
+        client:
+            id: mockupClient
+            secret: FJGUS98TWplnqtACxa7dFPICtjFCICMt
+    app:
+        jwtExpirationMs: 60000
+        jwtRefreshExpirationMs: 120000
+    iot:
+        local: false
+open:
+    weather:
+        key: 06e3fef08f512aa480b68136dc5af010
+spring:
+    datasource:
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        password: Mar@2022!!
+        url: jdbc:mysql://localhost:3306/AssetTechDBv5
+        username: root
+    jpa:
+        database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+        hibernate:
+            ddl-auto: update
+    profiles:
+        active: dev
+threshold:
+    value:
+        aqi: 100
+        humd: 85
+        temp: 40
+        
+        
+keycloak:
+  auth-server-url: http://localhost:8180/auth
+  realm: assetTech
+  public-client: true
+  bearer-only: true
+  resource: assetTechClient
+  
+server:
+  port: 8094

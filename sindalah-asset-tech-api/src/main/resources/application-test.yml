@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    password: Mar@2022!!
+    url: jdbc:mysql://localhost:3306/testdb
+    username: root
